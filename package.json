@@ -1,0 +1,10 @@
+{
+  "name": "watch-me",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Apresentação informativa do projeto WATCH ME",
+  "scripts": {
+    "dev": "vite",
+    "start": "node server.js"
+  }
+}
