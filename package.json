@@ -1,11 +1,13 @@
 {
   "name": "watch-me",
   "version": "1.0.0",
-  "private": false,
+  "private": true,
   "description": "Apresentação informativa do projeto WATCH ME",
   "scripts": {
     "dev": "vite",
-    "start": "node server.js"
+    "build": "vite build",
+    "start": "node server.js",
+    "preview": "vite preview"
   },
   "devDependencies": {
     "vite": "^8.3.1"
