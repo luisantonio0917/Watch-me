@@ -1,7 +1,7 @@
 {
   "name": "watch-me",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "description": "Apresentação informativa do projeto WATCH ME",
   "scripts": {
     "dev": "vite",
