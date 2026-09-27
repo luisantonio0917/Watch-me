@@ -1,45 +1,2105 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="Conheça o WATCH ME: proposta de relógio inteligente para acionamento de contatos de confiança e compartilhamento de localização em situações de risco.">
-  <title>WATCH ME | Tecnologia vestível para segurança</title>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="WATCH ME — orientação, proteção e acesso rápido à rede de apoio para mulheres em situação de violência."
+  >
+
+  <title>WATCH ME — Tecnologia inteligente para prevenção de riscos</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
-  <script src="/app.js" defer></script>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="app.js" defer></script>
+
+
+  <!-- =====================================================
+       CSS DA NOVA ABA
+       COMO FUNCIONA E COMO SURGIU
+       ===================================================== -->
+
+  <style>
+
+    .about-watch-section {
+      padding: 100px 0;
+      background: #ffffff;
+      border-top: 1px solid var(--line);
+    }
+
+    .about-watch-section .section-heading {
+      max-width: 760px;
+    }
+
+    .about-watch-section .section-heading h2 {
+      margin-top: 10px;
+      color: var(--navy);
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(34px, 4vw, 48px);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .about-watch-section .section-heading > p:last-child {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .about-watch-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 42px;
+    }
+
+    .about-watch-card {
+      position: relative;
+      min-height: 300px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+      transition: 0.25s ease;
+    }
+
+    .about-watch-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--purple);
+      box-shadow: var(--shadow);
+    }
+
+    .about-watch-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-width: 38px;
+      height: 30px;
+
+      padding: 0 9px;
+
+      border: 1.5px solid var(--purple);
+      border-radius: 8px;
+
+      background: var(--lavender-light);
+
+      color: var(--purple);
+
+      font-family: "Manrope", sans-serif;
+
+      font-size: 10px;
+      font-weight: 800;
+
+      line-height: 1;
+    }
+
+    .about-watch-icon {
+      width: 48px;
+      height: 48px;
+
+      display: grid;
+      place-items: center;
+
+      margin: 25px 0 20px;
+
+      border-radius: 14px;
+
+      background: var(--lavender);
+
+      color: var(--purple);
+
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .about-watch-card h3 {
+      color: var(--navy);
+
+      font-family: "Manrope", sans-serif;
+
+      font-size: 17px;
+    }
+
+    .about-watch-card p {
+      margin-top: 8px;
+
+      color: var(--muted);
+
+      font-size: 11px;
+
+      line-height: 1.7;
+    }
+
+    .about-watch-flow {
+      margin-top: 55px;
+
+      padding: 38px;
+
+      border-radius: var(--radius);
+
+      background: var(--navy);
+
+      color: #ffffff;
+    }
+
+    .about-watch-flow-heading {
+      max-width: 620px;
+    }
+
+    .about-watch-flow-heading h3 {
+      margin-top: 8px;
+
+      font-family: "Manrope", sans-serif;
+
+      font-size: 28px;
+
+      line-height: 1.15;
+    }
+
+    .about-watch-flow-heading p:last-child {
+      margin-top: 8px;
+
+      color: rgba(255, 255, 255, 0.68);
+
+      font-size: 12px;
+
+      line-height: 1.6;
+    }
+
+    .flow-steps {
+      display: grid;
+
+      grid-template-columns:
+        1fr auto 1fr auto 1fr auto 1fr;
+
+      align-items: center;
+
+      gap: 14px;
+
+      margin-top: 35px;
+    }
+
+    .flow-step {
+      min-width: 0;
+    }
+
+    .flow-step > span {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      width: 36px;
+      height: 30px;
+
+      border: 1px solid rgba(255, 255, 255, 0.25);
+
+      border-radius: 8px;
+
+      background: rgba(255, 255, 255, 0.08);
+
+      color: var(--lavender);
+
+      font-family: "Manrope", sans-serif;
+
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .flow-step strong {
+      display: block;
+
+      margin-top: 12px;
+
+      font-family: "Manrope", sans-serif;
+
+      font-size: 14px;
+    }
+
+    .flow-step small {
+      display: block;
+
+      margin-top: 5px;
+
+      color: rgba(255, 255, 255, 0.62);
+
+      font-size: 10px;
+
+      line-height: 1.5;
+    }
+
+    .flow-line {
+      width: 35px;
+      height: 1px;
+
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .about-watch-note {
+      margin-top: 18px;
+
+      padding: 18px 20px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 14px;
+
+      background: var(--lavender-light);
+
+      color: var(--muted);
+
+      font-size: 11px;
+
+      line-height: 1.6;
+    }
+
+    .about-watch-note strong {
+      color: var(--navy);
+    }
+
+
+    /* =====================================================
+       RESPONSIVIDADE
+       ===================================================== */
+
+    @media (max-width: 900px) {
+
+      .about-watch-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .flow-steps {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 24px;
+      }
+
+      .flow-line {
+        display: none;
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .about-watch-section {
+        padding: 75px 0;
+      }
+
+      .about-watch-grid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+      }
+
+      .about-watch-card {
+        min-height: auto;
+      }
+
+      .about-watch-flow {
+        padding: 25px 20px;
+      }
+
+      .flow-steps {
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+      }
+
+      .flow-line {
+        display: none;
+      }
+
+    }
+
+  </style>
+
 </head>
+
+
 <body>
-  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+
+  <!-- =====================================================
+       SAÍDA RÁPIDA
+       ===================================================== -->
+
+  <button
+    class="quick-exit"
+    id="quickExit"
+    type="button"
+    aria-label="Sair rapidamente do site"
+  >
+    ↗ Saída rápida
+  </button>
+
+
+
+  <!-- =====================================================
+       CABEÇALHO
+       ===================================================== -->
+
   <header class="site-header">
-    <a class="brand" href="#inicio" aria-label="WATCH ME, início"><span class="brand-icon">W</span><span><b>WATCH ME</b><small>Tecnologia vestível para segurança</small></span></a>
-    <nav aria-label="Navegação principal"><a href="#projeto">O projeto</a><a href="#funcionamento">Como funciona</a><a href="#tecnologia">Tecnologia</a><a href="#privacidade">Privacidade</a></nav>
-    <a class="header-action" href="#galeria">Ver protótipo <span>↗</span></a>
+
+    <a href="#inicio" class="brand">
+
+      <img
+        src="imagens/watch-me.png"
+        alt="WATCH ME"
+        class="brand-logo"
+      >
+
+      <span class="brand-text">
+
+        <strong>
+          WATCH ME
+        </strong>
+
+        <small>
+          Tecnologia inteligente para prevenção de riscos
+        </small>
+
+      </span>
+
+    </a>
+
+
+    <button
+      class="menu-button"
+      id="menuButton"
+      type="button"
+      aria-label="Abrir menu"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
+
+    <nav class="main-nav" id="mainNav">
+
+      <a href="#ajuda">
+        Ajuda agora
+      </a>
+
+      <a href="#bo">
+        Registrar BO
+      </a>
+
+      <a href="#protecao">
+        Proteção
+      </a>
+
+      <a href="#rede">
+        Rede de apoio
+      </a>
+
+      <!-- NOVA ABA -->
+
+      <a href="#como-funciona">
+        Como funciona
+      </a>
+
+      <a href="#projeto">
+        O projeto
+      </a>
+
+    </nav>
+
   </header>
 
-  <main id="conteudo">
+
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
+
     <section class="hero" id="inicio">
-      <div class="hero-inner">
-        <div class="hero-copy"><p class="eyebrow"><span></span> PROJETO DE TECNOLOGIA ASSISTIVA</p><h1>Um alerta claro.<br>Uma localização precisa.<br><em>Uma rede de apoio.</em></h1><p class="hero-summary">WATCH ME é a proposta de um relógio inteligente para situações de risco. Com um acionamento, o dispositivo envia um alerta aos contatos predefinidos e compartilha a localização disponível em tempo real.</p><div class="hero-actions"><a class="button button-teal" href="#funcionamento">Entenda como funciona <span>↓</span></a><a class="plain-link" href="#projeto">Sobre o projeto <span>→</span></a></div><div class="hero-disclaimer"><span class="info-mark">i</span><p>Protótipo conceitual em desenvolvimento. Não substitui serviços oficiais de emergência.</p></div></div>
-        <div class="watch-illustration" role="img" aria-label="Ilustração conceitual de um relógio inteligente WATCH ME com botão de alerta"><div class="watch-halo halo-a"></div><div class="watch-halo halo-b"></div><div class="watch-strap strap-upper"></div><div class="watch-strap strap-lower"></div><div class="watch-body"><div class="watch-face"><div class="face-status"><span>WATCH ME</span><span class="signal"><i></i><i></i><i></i></span></div><div class="face-time">10:30</div><div class="face-divider"></div><div class="face-state"><span class="check">✓</span><b>DISPONÍVEL</b><small>Sistema em espera</small></div><div class="face-button"><span class="face-dot"></span> BOTÃO DE ALERTA</div></div><span class="watch-side"></span></div><div class="callout callout-location"><span class="callout-icon">⌖</span><span><small>LOCALIZAÇÃO</small><b>Compartilhada com contatos</b></span></div><div class="callout callout-sos"><span class="callout-icon">!</span><span><small>ACIONAMENTO</small><b>Alerta enviado</b></span></div><div class="illustration-caption">ILUSTRAÇÃO CONCEITUAL · WATCH ME</div></div>
-      </div><div class="hero-footer"><span>PROPOSTA EM DESENVOLVIMENTO</span><span>DISPOSITIVO · CONECTIVIDADE · REDE DE APOIO</span><a href="#projeto">CONHEÇA A PROPOSTA ↓</a></div>
+
+      <div class="hero-content">
+
+        <div class="hero-copy">
+
+          <h1>
+
+            Você não precisa enfrentar
+
+            uma situação de risco
+
+            <em>
+              sem apoio.
+            </em>
+
+          </h1>
+
+
+          <p class="hero-text">
+
+            Encontre rapidamente o canal oficial adequado para emergência,
+            orientação, boletim de ocorrência ou proteção.
+
+          </p>
+
+
+          <div class="emergency-actions">
+
+
+            <a
+              href="tel:190"
+              class="emergency-card emergency"
+            >
+
+              <span class="card-label">
+                EMERGÊNCIA
+              </span>
+
+              <strong>
+                190
+              </strong>
+
+              <small>
+                Polícia Militar
+              </small>
+
+              <span class="card-arrow">
+                →
+              </span>
+
+            </a>
+
+
+
+            <a
+              href="tel:180"
+              class="emergency-card"
+            >
+
+              <span class="card-label">
+                ORIENTAÇÃO E DENÚNCIA
+              </span>
+
+              <strong>
+                180
+              </strong>
+
+              <small>
+                Central de Atendimento à Mulher
+              </small>
+
+              <span class="card-arrow">
+                →
+              </span>
+
+            </a>
+
+
+          </div>
+
+
+          <p class="privacy-note">
+
+            <span>
+              i
+            </span>
+
+            Este site não solicita nem armazena relatos,
+            localização ou dados pessoais.
+
+          </p>
+
+        </div>
+
+
+        <div class="watch-area">
+
+          <img
+            src="imagens/relogio.png"
+            alt="Relógio inteligente WATCH ME"
+            class="watch-image"
+          >
+
+        </div>
+
+      </div>
+
     </section>
 
-    <section class="project section" id="projeto"><div class="section-label">01 <span>O PROJETO</span></div><div class="project-grid"><div><p class="eyebrow eyebrow-dark">SEGURANÇA PESSOAL E TECNOLOGIA VESTÍVEL</p><h2>WATCH ME: tecnologia no pulso, apoio na hora certa.</h2></div><div class="project-text"><p>O WATCH ME investiga como um dispositivo vestível pode facilitar o pedido de ajuda quando a pessoa usuária não consegue acessar um telefone com rapidez. O conceito combina um botão de alerta, localização e comunicação com contatos escolhidos previamente.</p><p>Ao ser acionado, o relógio envia uma notificação para a lista configurada e compartilha a posição que o sistema consegue determinar naquele momento. O objetivo é oferecer aos contatos uma informação inicial e prática para que possam responder.</p><div class="key-facts"><div><b>01</b><span>Acionamento<br>manual</span></div><div><b>02</b><span>Contatos<br>predefinidos</span></div><div><b>03</b><span>Localização<br>compartilhada</span></div></div></div></div></section>
 
-    <section class="operation section" id="funcionamento"><div class="section-label">02 <span>FLUXO DE FUNCIONAMENTO</span></div><div class="section-heading"><h2>Como o alerta<br>chega à rede de apoio.</h2><p>O fluxo proposto descreve o caminho da interação no dispositivo até o recebimento da notificação. Cada etapa depende de conexão e da configuração do protótipo.</p></div><div class="flow-grid"><article><div class="flow-top"><span>01</span><span class="flow-icon">◉</span></div><h3>Acionamento</h3><p>A pessoa usuária pressiona o botão dedicado no relógio para iniciar o envio do alerta.</p><div class="flow-tag">INTERAÇÃO NO DISPOSITIVO</div></article><div class="flow-connector">→</div><article><div class="flow-top"><span>02</span><span class="flow-icon">⌖</span></div><h3>Obtenção da posição</h3><p>O sistema associa ao alerta a localização disponível, obtida pelo módulo de posicionamento.</p><div class="flow-tag">GPS · PRECISÃO VARIÁVEL</div></article><div class="flow-connector">→</div><article><div class="flow-top"><span>03</span><span class="flow-icon">⌁</span></div><h3>Transmissão</h3><p>A conectividade envia a notificação e os dados de localização para os contatos cadastrados.</p><div class="flow-tag">REDE MÓVEL OU CONEXÃO DISPONÍVEL</div></article><div class="flow-connector">→</div><article><div class="flow-top"><span>04</span><span class="flow-icon">♧</span></div><h3>Recebimento</h3><p>Os contatos recebem o alerta e podem consultar a localização compartilhada.</p><div class="flow-tag">CONTATOS DE CONFIANÇA</div></article></div><aside class="technical-note"><span class="info-mark">i</span><p><b>O desempenho depende do contexto.</b> Cobertura de rede, sinal de posicionamento, ambiente, bateria e integração do hardware podem afetar o envio e a precisão da localização. O sistema ainda precisa ser prototipado e validado.</p></aside></section>
 
-    <section class="technology section" id="tecnologia"><div class="section-label">03 <span>COMPONENTES E REQUISITOS</span></div><div class="section-heading"><h2>O que torna o conceito possível.</h2><p>Uma solução vestível de alerta precisa integrar componentes físicos, comunicação e decisões de projeto centradas na pessoa usuária.</p></div><div class="technology-grid"><article><div class="tech-number">01</div><div class="tech-symbol">⌁</div><h3>Botão de acionamento</h3><p>Interface física destinada a iniciar o alerta. O desenho precisa considerar acesso rápido, uso discreto e prevenção de acionamentos involuntários.</p><span>INTERFACE FÍSICA</span></article><article><div class="tech-number">02</div><div class="tech-symbol">⌖</div><h3>Posicionamento</h3><p>Receptor GNSS/GPS pode estimar a localização ao ar livre. Em ambientes internos ou com obstruções, a disponibilidade e a precisão podem diminuir.</p><span>LOCALIZAÇÃO</span></article><article><div class="tech-number">03</div><div class="tech-symbol">⌁</div><h3>Conectividade</h3><p>Uma conexão de dados, como rede móvel ou ligação a um telefone, é necessária para transmitir alertas e localização aos contatos.</p><span>COMUNICAÇÃO</span></article><article><div class="tech-number">04</div><div class="tech-symbol">▤</div><h3>Gestão de contatos</h3><p>A configuração deve permitir revisar os destinatários do alerta e informar com clareza quais dados serão enviados e em que situação.</p><span>CONFIGURAÇÃO E CONSENTIMENTO</span></article></div><div class="research-banner"><span class="research-icon">+</span><div><b>Etapas necessárias para validação</b><p>Desenvolvimento do protótipo, testes de conectividade e posicionamento, avaliação de usabilidade e análise dos riscos de privacidade e segurança.</p></div><span class="research-status">FASE DE<br>PROTOTIPAGEM</span></div></section>
+    <!-- =====================================================
+         FLUXO PRINCIPAL
+         ===================================================== -->
 
-    <section class="gallery section" id="galeria"><div class="section-label">04 <span>REGISTRO VISUAL</span></div><div class="gallery-heading"><div><h2>Imagens do projeto.</h2><p>Espaço reservado para fotografias do protótipo, componentes e processo de desenvolvimento.</p></div><div class="gallery-controls"><span class="slide-counter"><b id="slide-current">01</b> / 05</span><button id="prev" class="gallery-arrow" aria-label="Imagem anterior">←</button><button id="next" class="gallery-arrow" aria-label="Próxima imagem">→</button></div></div><div class="carousel" aria-label="Galeria com cinco imagens"><div class="slides" id="slides"><figure class="slide"><div class="image-slot slot-one"><span class="slot-number">01</span><span class="slot-plus">+</span><b>RELÓGIO WATCH ME</b><small>Foto principal do protótipo</small></div><figcaption><b>01</b> · Protótipo do dispositivo</figcaption></figure><figure class="slide"><div class="image-slot slot-two"><span class="slot-number">02</span><span class="slot-plus">+</span><b>INTERFACE</b><small>Detalhes da tela e do acionamento</small></div><figcaption><b>02</b> · Interface do dispositivo</figcaption></figure><figure class="slide"><div class="image-slot slot-three"><span class="slot-number">03</span><span class="slot-plus">+</span><b>COMPONENTES</b><small>Módulos e componentes eletrônicos</small></div><figcaption><b>03</b> · Componentes eletrônicos</figcaption></figure><figure class="slide"><div class="image-slot slot-four"><span class="slot-number">04</span><span class="slot-plus">+</span><b>DESENVOLVIMENTO</b><small>Registro do processo de prototipagem</small></div><figcaption><b>04</b> · Processo de desenvolvimento</figcaption></figure><figure class="slide"><div class="image-slot slot-five"><span class="slot-number">05</span><span class="slot-plus">+</span><b>USO E CONTEXTO</b><small>Imagem de contexto ou teste de uso</small></div><figcaption><b>05</b> · Contexto de uso</figcaption></figure></div><div class="carousel-dots" id="dots"></div></div><p class="gallery-note">Substitua os espaços indicados por suas imagens em <code>public/index.html</code>.</p></section>
+    <section
+      class="needs-section"
+      id="ajuda"
+    >
 
-    <section class="privacy section" id="privacidade"><div class="section-label">05 <span>PRIVACIDADE, SEGURANÇA E LIMITES</span></div><div class="privacy-grid"><div><h2>Localização é um dado sensível. O controle precisa ser explícito.</h2><p class="privacy-lead">O projeto deve deixar claro quem recebe o alerta, quais informações são compartilhadas e em que condições.</p></div><div class="privacy-points"><article><span>01</span><div><h3>Consentimento</h3><p>A pessoa usuária precisa entender e autorizar o compartilhamento com cada contato predefinido.</p></div></article><article><span>02</span><div><h3>Transparência</h3><p>O sistema deve indicar quando um alerta foi acionado e quais dados acompanham a notificação.</p></div></article><article><span>03</span><div><h3>Proteção de dados</h3><p>Armazenamento, acesso, retenção e exclusão de informações precisam ser definidos antes da implementação.</p></div></article></div></div><div class="limitations"><b>ESTADO ATUAL DA PROPOSTA</b><p>O WATCH ME é um conceito em fase de prototipagem. Este site descreve o funcionamento pretendido; não representa um produto validado, não monitora usuários e não envia alertas reais. Em emergência, procure os serviços oficiais da sua região.</p></div></section>
+      <div class="section-container">
 
-    <section class="closing"><div class="closing-inner"><p class="eyebrow">WATCH ME · PROJETO EM DESENVOLVIMENTO</p><h2>Tecnologia para aproximar<br>quem pode oferecer apoio.</h2><p>Uma proposta que começa com uma pergunta: como tornar o pedido de ajuda mais acessível, informado e conectado?</p><a class="button button-white" href="#inicio">Voltar ao início <span>↑</span></a></div><div class="closing-index">WATCH ME<br>TECNOLOGIA VESTÍVEL · SEGURANÇA PESSOAL</div></section>
+        <div class="section-intro">
+
+          <p class="section-label">
+            COMECE POR AQUI
+          </p>
+
+          <h2>
+            Do que você precisa?
+          </h2>
+
+          <p>
+            Escolha a situação que mais se aproxima do que você precisa agora.
+            O WATCH ME mostra o caminho adequado.
+          </p>
+
+        </div>
+
+
+        <div class="needs-grid">
+
+
+          <!-- PERIGO -->
+
+          <button
+            class="need-card"
+            data-target="danger"
+            type="button"
+          >
+
+            <span class="need-number">
+              01
+            </span>
+
+            <span
+              class="need-icon danger-icon"
+              aria-hidden="true"
+            >
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+
+                <path d="M12 3 2.8 20h18.4L12 3Z"/>
+
+                <path d="M12 9v5"/>
+
+                <path d="M12 17h.01"/>
+
+              </svg>
+
+            </span>
+
+
+            <span>
+
+              <strong>
+                Há perigo imediato
+              </strong>
+
+              <small>
+                Preciso de ajuda agora
+              </small>
+
+            </span>
+
+
+            <span class="need-arrow">
+              →
+            </span>
+
+          </button>
+
+
+
+          <!-- ORIENTAÇÃO -->
+
+          <button
+            class="need-card"
+            data-target="orientation"
+            type="button"
+          >
+
+            <span class="need-number">
+              02
+            </span>
+
+            <span
+              class="need-icon"
+              aria-hidden="true"
+            >
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+
+                <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.7 8.7 0 0 1-4.1-1L3 20l1.1-4.3A8.4 8.4 0 1 1 21 11.5Z"/>
+
+                <path d="M8.5 11.5h7"/>
+
+                <path d="M12 8v7"/>
+
+              </svg>
+
+            </span>
+
+
+            <span>
+
+              <strong>
+                Quero orientação
+              </strong>
+
+              <small>
+                Preciso conversar ou denunciar
+              </small>
+
+            </span>
+
+
+            <span class="need-arrow">
+              →
+            </span>
+
+          </button>
+
+
+
+          <!-- BO -->
+
+          <button
+            class="need-card"
+            data-target="bo"
+            type="button"
+          >
+
+            <span class="need-number">
+              03
+            </span>
+
+            <span
+              class="need-icon"
+              aria-hidden="true"
+            >
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+
+                <path d="M6 3h9l3 3v15H6z"/>
+
+                <path d="M15 3v4h4"/>
+
+                <path d="M9 12h6"/>
+
+                <path d="M9 16h6"/>
+
+              </svg>
+
+            </span>
+
+
+            <span>
+
+              <strong>
+                Quero registrar
+              </strong>
+
+              <small>
+                Quero fazer um boletim de ocorrência
+              </small>
+
+            </span>
+
+
+            <span class="need-arrow">
+              →
+            </span>
+
+          </button>
+
+
+
+          <!-- PROTEÇÃO -->
+
+          <button
+            class="need-card"
+            data-target="protection"
+            type="button"
+          >
+
+            <span class="need-number">
+              04
+            </span>
+
+            <span
+              class="need-icon"
+              aria-hidden="true"
+            >
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+
+                <path d="M20.8 8.7c0 5.5-8.8 10.3-8.8 10.3S3.2 14.2 3.2 8.7A4.7 4.7 0 0 1 12 6.2a4.7 4.7 0 0 1 8.8 2.5Z"/>
+
+                <path d="M12 9.2v4.6"/>
+
+                <path d="M9.7 11.5h4.6"/>
+
+              </svg>
+
+            </span>
+
+
+            <span>
+
+              <strong>
+                Preciso de proteção
+              </strong>
+
+              <small>
+                Quero saber sobre medida protetiva
+              </small>
+
+            </span>
+
+
+            <span class="need-arrow">
+              →
+            </span>
+
+          </button>
+
+
+        </div>
+
+
+        <div
+          class="guidance-box"
+          id="guidanceBox"
+          aria-live="polite"
+        >
+
+          <div class="guidance-placeholder">
+
+            <span>
+              ↑
+            </span>
+
+            <p>
+              Selecione uma das opções acima para encontrar
+              o caminho adequado.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BOLETIM DE OCORRÊNCIA
+         ===================================================== -->
+
+    <section
+      class="content-section light-section"
+      id="bo"
+    >
+
+      <div class="section-container">
+
+        <p class="section-label">
+          REGISTRAR BO
+        </p>
+
+
+        <div class="content-grid">
+
+          <div>
+
+            <h2>
+              Como registrar
+              com segurança.
+            </h2>
+
+
+            <p class="lead">
+              O boletim de ocorrência formaliza a comunicação de um fato
+              à Polícia Civil.
+            </p>
+
+
+            <a
+              class="primary-button"
+              href="https://www.delegaciaeletronica.ce.gov.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              Abrir Delegacia Eletrônica
+
+              <span>
+                ↗
+              </span>
+
+            </a>
+
+          </div>
+
+
+
+          <!-- ETAPAS -->
+
+          <div class="steps">
+
+
+            <article class="step">
+
+              <span
+                class="step-number-icon"
+                aria-hidden="true"
+              >
+                01
+              </span>
+
+              <div>
+
+                <h3>
+                  Verifique a urgência
+                </h3>
+
+                <p>
+                  Se houver risco imediato ou uma situação acontecendo agora,
+                  ligue para 190.
+                </p>
+
+              </div>
+
+            </article>
+
+
+
+            <article class="step">
+
+              <span
+                class="step-number-icon"
+                aria-hidden="true"
+              >
+                02
+              </span>
+
+              <div>
+
+                <h3>
+                  Reúna informações
+                </h3>
+
+                <p>
+                  Se for seguro, tenha em mãos datas, locais e informações
+                  relacionadas ao ocorrido.
+                </p>
+
+              </div>
+
+            </article>
+
+
+
+            <article class="step">
+
+              <span
+                class="step-number-icon"
+                aria-hidden="true"
+              >
+                03
+              </span>
+
+              <div>
+
+                <h3>
+                  Use o canal adequado
+                </h3>
+
+                <p>
+                  Acesse a Delegacia Eletrônica ou procure uma unidade policial.
+                </p>
+
+              </div>
+
+            </article>
+
+
+
+            <article class="step">
+
+              <span
+                class="step-number-icon"
+                aria-hidden="true"
+              >
+                04
+              </span>
+
+              <div>
+
+                <h3>
+                  Guarde o protocolo
+                </h3>
+
+                <p>
+                  Salve o número do registro para acompanhar o atendimento.
+                </p>
+
+              </div>
+
+            </article>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROTEÇÃO
+         ===================================================== -->
+
+    <section
+      class="content-section navy-section"
+      id="protecao"
+    >
+
+      <div class="section-container">
+
+        <p class="section-label light-label">
+          PROTEÇÃO E DIREITOS
+        </p>
+
+
+        <div class="content-grid protection-grid">
+
+          <div>
+
+            <h2>
+              Medida protetiva:
+              um caminho para proteção.
+            </h2>
+
+
+            <p class="lead">
+              A medida protetiva é uma decisão judicial destinada
+              a proteger mulheres em situação de risco ou violência.
+            </p>
+
+
+            <a
+              class="primary-button purple-button"
+              href="https://mulher.policiacivil.ce.gov.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              Solicitar orientação online
+
+              <span>
+                ↗
+              </span>
+
+            </a>
+
+          </div>
+
+
+          <div class="protection-card">
+
+            <div
+              class="protection-icon"
+              aria-hidden="true"
+            >
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+
+                <path d="M12 21s8-4 8-10V5l-8-3-8 3v6c0 6 8 10 8 10Z"/>
+
+                <path d="m8.5 12 2.2 2.2 4.8-5"/>
+
+              </svg>
+
+            </div>
+
+
+            <h3>
+              Você também pode procurar:
+            </h3>
+
+
+            <ul>
+
+              <li>
+                Delegacia de Defesa da Mulher
+              </li>
+
+              <li>
+                Defensoria Pública
+              </li>
+
+              <li>
+                Judiciário
+              </li>
+
+              <li>
+                Serviços especializados da rede de apoio
+              </li>
+
+            </ul>
+
+
+            <p>
+              Em situação de emergência, ligue para 190.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         REDE OFICIAL
+         ===================================================== -->
+
+    <section
+      class="content-section light-section"
+      id="rede"
+    >
+
+      <div class="section-container">
+
+        <p class="section-label">
+          REDE OFICIAL
+        </p>
+
+
+        <div class="section-heading-row">
+
+          <div>
+
+            <h2>
+              Encontre o atendimento certo.
+            </h2>
+
+            <p class="lead">
+              Canais oficiais para orientação, emergência
+              e atendimento especializado no Ceará.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="network-grid">
+
+
+          <!-- POLÍCIA MILITAR -->
+
+          <a
+            href="tel:190"
+            class="network-card"
+          >
+
+            <span
+              class="network-icon"
+              aria-hidden="true"
+            >
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+
+                <path d="M12 3 4 6v5c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6l-8-3Z"/>
+
+                <path d="m9 12 2 2 4-4"/>
+
+              </svg>
+
+            </span>
+
+
+            <div>
+
+              <strong>
+                Polícia Militar
+              </strong>
+
+              <p>
+                Emergência e risco imediato.
+              </p>
+
+              <b>
+                190
+              </b>
+
+            </div>
+
+          </a>
+
+
+
+          <!-- LIGUE 180 -->
+
+          <a
+            href="tel:180"
+            class="network-card"
+          >
+
+            <span
+              class="network-icon purple-icon"
+              aria-hidden="true"
+            >
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+
+                <path d="M20 11a8 8 0 0 1-8 8 8.4 8.4 0 0 1-4-1L4 20l1.1-4.1A8 8 0 1 1 20 11Z"/>
+
+                <path d="M8 11h8"/>
+
+              </svg>
+
+            </span>
+
+
+            <div>
+
+              <strong>
+                Ligue 180
+              </strong>
+
+              <p>
+                Orientação e denúncias de violência contra a mulher.
+              </p>
+
+              <b>
+                180
+              </b>
+
+            </div>
+
+          </a>
+
+
+
+          <!-- DEFENSORIA -->
+
+          <a
+            href="tel:129"
+            class="network-card"
+          >
+
+            <span
+              class="network-icon"
+              aria-hidden="true"
+            >
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+
+                <path d="M4 5h16v14H4z"/>
+
+                <path d="M8 9h8"/>
+
+                <path d="M8 13h5"/>
+
+              </svg>
+
+            </span>
+
+
+            <div>
+
+              <strong>
+                Defensoria Pública
+              </strong>
+
+              <p>
+                Orientação jurídica gratuita.
+              </p>
+
+              <b>
+                129
+              </b>
+
+            </div>
+
+          </a>
+
+
+
+          <!-- DELEGACIAS DA MULHER -->
+
+          <a
+            href="https://www.policia.civil.ce.gov.br/contatos/especializadas/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="network-card"
+          >
+
+            <span
+              class="network-icon purple-icon"
+              aria-hidden="true"
+            >
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+
+                <path d="M3 21h18"/>
+
+                <path d="M5 21V6l7-3 7 3v15"/>
+
+                <path d="M9 21v-5h6v5"/>
+
+                <path d="M9 9h.01M15 9h.01M9 12h.01M15 12h.01"/>
+
+              </svg>
+
+            </span>
+
+
+            <div>
+
+              <strong>
+                Delegacias da Mulher
+              </strong>
+
+              <p>
+                Unidades especializadas no Ceará.
+              </p>
+
+              <b>
+                Ver contatos ↗
+              </b>
+
+            </div>
+
+          </a>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ENTENDENDO A VIOLÊNCIA
+         ===================================================== -->
+
+    <section
+      class="content-section understanding-section"
+      id="violencia"
+    >
+
+      <div class="section-container">
+
+        <p class="section-label">
+          ENTENDENDO A VIOLÊNCIA
+        </p>
+
+
+        <div class="section-heading">
+
+          <h2>
+            Violência nem sempre deixa
+            uma marca visível.
+          </h2>
+
+          <p>
+            A Lei Maria da Penha reconhece diferentes formas
+            de violência doméstica e familiar.
+          </p>
+
+        </div>
+
+
+        <div class="violence-grid">
+
+
+          <article>
+
+            <span>
+              01
+            </span>
+
+            <h3>
+              Física
+            </h3>
+
+            <p>
+              Agressões que atingem a integridade ou a saúde corporal.
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <span>
+              02
+            </span>
+
+            <h3>
+              Psicológica
+            </h3>
+
+            <p>
+              Ameaças, humilhações, controle, isolamento ou perseguição.
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <span>
+              03
+            </span>
+
+            <h3>
+              Sexual
+            </h3>
+
+            <p>
+              Constrangimento ou coerção relacionados à vida sexual
+              e reprodutiva.
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <span>
+              04
+            </span>
+
+            <h3>
+              Patrimonial
+            </h3>
+
+            <p>
+              Retenção, destruição ou subtração de bens,
+              documentos ou dinheiro.
+            </p>
+
+          </article>
+
+
+          <article>
+
+            <span>
+              05
+            </span>
+
+            <h3>
+              Moral
+            </h3>
+
+            <p>
+              Condutas que atingem a honra, como calúnia,
+              difamação ou injúria.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FAQ
+         ===================================================== -->
+
+    <section class="faq-section">
+
+      <div class="section-container">
+
+
+        <div class="faq-heading">
+
+          <p class="section-label light-label">
+            PERGUNTAS FREQUENTES
+          </p>
+
+          <h2>
+            Respostas rápidas,
+            sem juridiquês.
+          </h2>
+
+        </div>
+
+
+        <div class="faq-list">
+
+
+          <article class="faq-item">
+
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+
+              <span>
+                Como funciona uma medida protetiva?
+              </span>
+
+              <span>
+                +
+              </span>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+              <p>
+                É uma decisão judicial destinada a proteger a mulher em
+                situação de risco. Dependendo do caso, pode estabelecer
+                medidas como afastamento do agressor do lar e proibição
+                de aproximação ou contato.
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="faq-item">
+
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+
+              <span>
+                Preciso ter marcas físicas para buscar ajuda?
+              </span>
+
+              <span>
+                +
+              </span>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+              <p>
+                Não. A violência doméstica e familiar pode assumir
+                diferentes formas, inclusive psicológica, sexual,
+                patrimonial e moral.
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="faq-item">
+
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+
+              <span>
+                Qual a diferença entre 180 e 190?
+              </span>
+
+              <span>
+                +
+              </span>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+              <p>
+                O 190 é destinado a situações de emergência que precisam
+                de intervenção policial imediata. O 180 oferece orientação,
+                informações sobre direitos e recebe denúncias de violência
+                contra a mulher.
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="faq-item">
+
+            <button
+              class="faq-question"
+              type="button"
+              aria-expanded="false"
+            >
+
+              <span>
+                O site WATCH ME substitui os serviços oficiais?
+              </span>
+
+              <span>
+                +
+              </span>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+              <p>
+                Não. O WATCH ME funciona como um portal de orientação
+                e encaminhamento. Os serviços oficiais continuam sendo
+                responsáveis pelo atendimento.
+              </p>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         NOVA ABA — COMO FUNCIONA E COMO SURGIU
+         ===================================================== -->
+
+    <section
+      class="about-watch-section"
+      id="como-funciona"
+    >
+
+      <div class="section-container">
+
+
+        <div class="section-heading">
+
+          <p class="section-label">
+            COMO FUNCIONA
+          </p>
+
+          <h2>
+            Como surgiu e como funciona o WATCH ME?
+          </h2>
+
+          <p>
+            O WATCH ME surgiu como uma proposta de tecnologia voltada
+            à prevenção de riscos, reunindo informação, orientação e
+            acesso aos canais oficiais de apoio em um único lugar.
+          </p>
+
+        </div>
+
+
+        <div class="about-watch-grid">
+
+
+          <!-- 01 -->
+
+          <article class="about-watch-card">
+
+            <span class="about-watch-number">
+              01
+            </span>
+
+            <div
+              class="about-watch-icon"
+              aria-hidden="true"
+            >
+              ◎
+            </div>
+
+            <h3>
+              Como surgiu
+            </h3>
+
+            <p>
+              O projeto nasceu da ideia de facilitar o acesso a
+              informações e caminhos de atendimento que podem ser
+              difíceis de encontrar em uma situação de risco.
+            </p>
+
+          </article>
+
+
+
+          <!-- 02 -->
+
+          <article class="about-watch-card">
+
+            <span class="about-watch-number">
+              02
+            </span>
+
+            <div
+              class="about-watch-icon"
+              aria-hidden="true"
+            >
+              ↗
+            </div>
+
+            <h3>
+              Como funciona
+            </h3>
+
+            <p>
+              A pessoa identifica o que precisa e escolhe uma das
+              opções disponíveis. O WATCH ME então apresenta o canal
+              ou a orientação correspondente.
+            </p>
+
+          </article>
+
+
+
+          <!-- 03 -->
+
+          <article class="about-watch-card">
+
+            <span class="about-watch-number">
+              03
+            </span>
+
+            <div
+              class="about-watch-icon"
+              aria-hidden="true"
+            >
+              ⌁
+            </div>
+
+            <h3>
+              Tecnologia utilizada
+            </h3>
+
+            <p>
+              O projeto utiliza uma interface web responsiva,
+              organizada para apresentar informações de maneira
+              simples, rápida e fácil de localizar.
+            </p>
+
+          </article>
+
+
+
+          <!-- 04 -->
+
+          <article class="about-watch-card">
+
+            <span class="about-watch-number">
+              04
+            </span>
+
+            <div
+              class="about-watch-icon"
+              aria-hidden="true"
+            >
+              ✓
+            </div>
+
+            <h3>
+              Objetivo do projeto
+            </h3>
+
+            <p>
+              O objetivo é criar uma ponte entre a pessoa e a rede
+              de apoio, facilitando a busca pelo serviço adequado
+              sem substituir os órgãos oficiais.
+            </p>
+
+          </article>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             FLUXO
+             ================================================= -->
+
+        <div class="about-watch-flow">
+
+
+          <div class="about-watch-flow-heading">
+
+            <p class="section-label light-label">
+              FLUXO DO WATCH ME
+            </p>
+
+            <h3>
+              Da necessidade ao canal adequado
+            </h3>
+
+            <p>
+              O funcionamento do projeto pode ser entendido em
+              quatro etapas simples.
+            </p>
+
+          </div>
+
+
+          <div class="flow-steps">
+
+
+            <div class="flow-step">
+
+              <span>
+                01
+              </span>
+
+              <strong>
+                Identificar
+              </strong>
+
+              <small>
+                Entender qual é a necessidade no momento.
+              </small>
+
+            </div>
+
+
+            <div
+              class="flow-line"
+              aria-hidden="true"
+            ></div>
+
+
+            <div class="flow-step">
+
+              <span>
+                02
+              </span>
+
+              <strong>
+                Selecionar
+              </strong>
+
+              <small>
+                Escolher a situação que mais se aproxima
+                do problema.
+              </small>
+
+            </div>
+
+
+            <div
+              class="flow-line"
+              aria-hidden="true"
+            ></div>
+
+
+            <div class="flow-step">
+
+              <span>
+                03
+              </span>
+
+              <strong>
+                Orientar
+              </strong>
+
+              <small>
+                Receber as informações e o caminho indicado.
+              </small>
+
+            </div>
+
+
+            <div
+              class="flow-line"
+              aria-hidden="true"
+            ></div>
+
+
+            <div class="flow-step">
+
+              <span>
+                04
+              </span>
+
+              <strong>
+                Acessar
+              </strong>
+
+              <small>
+                Seguir para o canal oficial correspondente.
+              </small>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+        <div class="about-watch-note">
+
+          <strong>
+            Importante:
+          </strong>
+
+          o WATCH ME é uma ferramenta de orientação e informação.
+          Em uma emergência ou situação de risco imediato, procure
+          o serviço oficial de emergência.
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROJETO
+         ===================================================== -->
+
+    <section
+      class="project-section"
+      id="projeto"
+    >
+
+      <div class="section-container">
+
+        <p class="section-label">
+          O PROJETO
+        </p>
+
+
+        <div class="project-content">
+
+          <div>
+
+            <h2>
+              WATCH ME:
+              Tecnologia inteligente para prevenção de riscos
+            </h2>
+
+          </div>
+
+
+          <div>
+
+            <p>
+              O WATCH ME é um conceito de dispositivo vestível pensado
+              para facilitar o pedido de ajuda em situações de risco.
+            </p>
+
+
+            <div class="project-features">
+
+              <span>
+                BOTÃO SOS
+              </span>
+
+              <span>
+                LOCALIZAÇÃO GPS
+              </span>
+
+              <span>
+                COMUNICAÇÃO GSM
+              </span>
+
+              <span>
+                DETECÇÃO DE QUEDA
+              </span>
+
+            </div>
+
+
+            <p class="project-disclaimer">
+              O protótipo está em fase de desenvolvimento e não substitui
+              serviços policiais, médicos ou de emergência.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
   </main>
-  <footer><a class="brand" href="#inicio"><span class="brand-icon">W</span><span><b>WATCH ME</b><small>Tecnologia vestível para segurança</small></span></a><span>Projeto conceitual · Conteúdo informativo</span><a href="#privacidade">Privacidade e limites ↑</a></footer>
+
+
+
+  <!-- =====================================================
+       RODAPÉ
+       ===================================================== -->
+
+  <footer>
+
+    <div class="footer-brand">
+
+      <img
+        src="imagens/watch-me-original.jpeg"
+        alt="WATCH ME"
+        class="footer-logo"
+      >
+
+
+      <div>
+
+        <strong>
+          WATCH ME
+        </strong>
+
+        <small>
+          Tecnologia inteligente para prevenção de riscos
+        </small>
+
+      </div>
+
+    </div>
+
+
+    <p>
+      Conteúdo educativo e informativo.
+      Não substitui atendimento oficial.
+    </p>
+
+
+    <a href="#inicio">
+      Voltar ao início ↑
+    </a>
+
+  </footer>
+
+
+
+  <!-- =====================================================
+       VOLTAR AO TOPO
+       ===================================================== -->
+
+  <button
+    class="back-top"
+    id="backTop"
+    type="button"
+    aria-label="Voltar ao topo"
+  >
+    ↑
+  </button>
+
+
 </body>
+
 </html>
